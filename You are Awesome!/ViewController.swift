@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -16,11 +16,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         messageLabel.text = ""
     }
-
-    @IBAction func messageButtonPressed(_ sender: Any) {
-        messageLabel.text = "You are Awesome!"
-        imageView.image = UIImage(named: "image0")
-    }
     
+    @IBAction func messageButtonPressed(_ sender: Any) {
+        
+        let awesomeMessage = "You are Awesome!"
+        let greatMessage = "You are Great!"
+        let daBombMessage = "You are Da Bomb!"
+        
+        if messageLabel.text == awesomeMessage{
+            messageLabel.text = greatMessage
+            imageView.image = UIImage(named: "image1")
+        }else if messageLabel.text == greatMessage{
+            messageLabel.text = daBombMessage
+            imageView.image = UIImage(named: "image2")
+        }else{
+            messageLabel.text = awesomeMessage
+            imageView.image = UIImage(named: "image0")
+        }
+        
+    }
 }
-
